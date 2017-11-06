@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Extension Configuration</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+    crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <h3>Pinterest Tag</h3>
+    <p>Use the Pinterest tag on your website to build audiences to target based on actions they've taken on your site, and gather
+      valuable conversion insights.</p>
+    <p>Learn more about
+      <a href="https://help.pinterest.com/en/articles/website-conversion-tracking" target="_blank">the Pinterest Tag for businesses and websites</a>.</p>
+
+      <p>If you know your Tag ID, enter it here:</p>
+
+    <form>
+      <label>
+        <span>Tag ID</span>
+        <input id="tagid">
+      </label>
+    </form>
+
+    <script src="https://assets.adobedtm.com/activation/reactor/extensionbridge/extensionbridge.min.js"></script>
+    <script>
+      window.extensionBridge.register({
+        init: function (info) {
+          if (info.settings) {
+            // Populate form values from persisted settings.
+            document.getElementById('tagid').value = (info.settings.tagid) || '';
+          }
+        },
+
+        getSettings: function () {
+          // Return settings object from form values.
+          return {
+            tagid: document.getElementById('tagid').value || ''
+          }
+        },
+
+        validate: function () {
+          // Return whether settings are valid.
+          var tagidField = document.getElementById('tagid');
+          tagidField.invalid = !tagidField.value;
+          return !tagidField.invalid;
+        }
+      });
+    </script>
+  </div>
+</body>
+
+</html>

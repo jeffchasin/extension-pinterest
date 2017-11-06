@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Checkout Action</title>
+  <meta name="description" content="Checkout Action">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="../resources/main.css">
+  <script src="../resources/viewhelpers.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div id="content"></div>
+    <script>
+      getEventForm(deStuff);
+    </script>
+
+  </div>
+
+  <script src="https://assets.adobedtm.com/activation/reactor/extensionbridge/extensionbridge.min.js"></script>
+  <script>
+    window.extensionBridge.register({
+      init: function (info) {
+        if (info.settings) {
+          // Populate form values from persisted settings.
+          document.getElementById('currency').value = info.settings.currency || '';
+          document.getElementById('lead_type').value = info.settings.lead_type || '';
+          document.getElementById('line_items').value = info.settings.line_items || '';
+          document.getElementById('order_id').value = info.settings.order_id || '';
+          document.getElementById('order_quantity').value = info.settings.order_quantity || '';
+          document.getElementById('promo_code').value = info.settings.promo_code || '';
+          document.getElementById('property').value = info.settings.property || '';
+          document.getElementById('search_query').value = info.settings.search_query || '';
+          document.getElementById('value').value = info.settings.value || '';
+          document.getElementById('video_title').value = info.settings.video_title || '';
+        }
+      },
+
+      getSettings: function () {
+        // Return settings object from form values.
+        return {
+          currency: document.getElementById('currency').value || '',
+          lead_type: document.getElementById('lead_type').value || '',
+          line_items: document.getElementById('line_items').value || '',
+          order_id: document.getElementById('order_id').value || '',
+          order_quantity: document.getElementById('order_quantity').value || '',
+          promo_code: document.getElementById('promo_code').value || '',
+          property: document.getElementById('property').value || '',
+          search_query: document.getElementById('search_query').value || '',
+          value: document.getElementById('value').value || '',
+          video_title: document.getElementById('video_title').value || '',
+        };
+      },
+
+      validate: function () {
+        return true;
+      }
+    });
+  </script>
+  </div>
+</body>
+
+</html>

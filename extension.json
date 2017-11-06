@@ -1,0 +1,430 @@
+{
+  "displayName": "Pinterest Conversion Tracking",
+  "name": "pinterest-conversion-tracking",
+  "version": "1.0.0",
+  "description": "Track visitor actions on your website after views of your Promoted Pin. Measure return on ad spend and create targeted audiences. Learn more at https://ads.pinterest.com/",
+  "iconPath": "src/view/resources/pinterest.svg",
+  "author": {
+    "name": "Jeff Chasin",
+    "url": "http://developer.adobelaunch.com/"
+  },
+  "viewBasePath": "src/view/",
+  "configuration": {
+    "viewPath": "configuration/configuration.html",
+    "schema": {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "description": "Your unique Pinterest Tag ID from the Conversion Tracking section of the Pinterest Ads menu",
+      "type": "object",
+      "properties": {
+        "tagid": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "tagid"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "actions": [
+    {
+      "name": "loadbasecode",
+      "displayName": "Load Base Code",
+      "libPath": "src/lib/actions/loadBaseCode.js",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      }
+    },
+    {
+      "displayName": "AddToCart",
+      "name": "addtocart",
+      "libPath": "src/lib/actions/sendAddToCartEvent.js",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "description": "Track people who add items to shopping carts",
+        "type": "object",
+        "properties": {
+          "currency": {
+            "type": "string"
+          },
+          "lead_type": {
+            "type": "string"
+          },
+          "order_id": {
+            "type": "string"
+          },
+          "order_quantity": {
+            "type": "string"
+          },
+          "promo_code": {
+            "type": "string"
+          },
+          "property": {
+            "type": "string"
+          },
+          "search_query": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "video_title": {
+            "type": "string"
+          },
+          "line_items": {
+            "type": "string"
+          }
+        }
+      },
+      "viewPath": "actions/addtocart.html"
+    },
+    {
+      "displayName": "PageVisit",
+      "name": "pagevisit",
+      "libPath": "src/lib/actions/sendPageVisitEvent.js",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "description": "Track people who view primary pages",
+        "type": "object",
+        "properties": {
+          "currency": {
+            "type": "string"
+          },
+          "lead_type": {
+            "type": "string"
+          },
+          "line_items": {
+            "type": "string"
+          },
+          "order_id": {
+            "type": "string"
+          },
+          "order_quantity": {
+            "type": "string"
+          },
+          "promo_code": {
+            "type": "string"
+          },
+          "property": {
+            "type": "string"
+          },
+          "search_query": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "video_title": {
+            "type": "string"
+          }
+        }
+      },
+      "viewPath": "actions/pagevisit.html"
+    },
+    {
+      "displayName": "ViewCategory",
+      "name": "viewcategory",
+      "libPath": "src/lib/actions/sendViewCategoryEvent.js",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "description": "Track people who view category pages",
+        "type": "object",
+        "properties": {
+          "currency": {
+            "type": "string"
+          },
+          "lead_type": {
+            "type": "string"
+          },
+          "order_id": {
+            "type": "string"
+          },
+          "order_quantity": {
+            "type": "string"
+          },
+          "promo_code": {
+            "type": "string"
+          },
+          "property": {
+            "type": "string"
+          },
+          "search_query": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "video_title": {
+            "type": "string"
+          },
+          "line_items": {
+            "type": "string"
+          }
+        }
+      },
+      "viewPath": "actions/viewcategory.html"
+    },
+    {
+      "displayName": "Search",
+      "name": "search",
+      "libPath": "src/lib/actions/sendSearchEvent.js",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "description": "Track people who perform searches on your website",
+        "type": "object",
+        "properties": {
+          "currency": {
+            "type": "string"
+          },
+          "lead_type": {
+            "type": "string"
+          },
+          "order_id": {
+            "type": "string"
+          },
+          "order_quantity": {
+            "type": "string"
+          },
+          "promo_code": {
+            "type": "string"
+          },
+          "property": {
+            "type": "string"
+          },
+          "search_query": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "video_title": {
+            "type": "string"
+          },
+          "line_items": {
+            "type": "string"
+          }
+        }
+      },
+      "viewPath": "actions/search.html"
+    },
+    {
+      "displayName": "Checkout",
+      "name": "checkout",
+      "libPath": "src/lib/actions/sendCheckOutEvent.js",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "description": "Track people who complete transactions",
+        "type": "object",
+        "properties": {
+          "currency": {
+            "type": "string"
+          },
+          "lead_type": {
+            "type": "string"
+          },
+          "order_id": {
+            "type": "string"
+          },
+          "order_quantity": {
+            "type": "string"
+          },
+          "promo_code": {
+            "type": "string"
+          },
+          "property": {
+            "type": "string"
+          },
+          "search_query": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "video_title": {
+            "type": "string"
+          },
+          "line_items": {
+            "type": "string"
+          }
+        }
+      },
+      "viewPath": "actions/checkout.html"
+    },
+    {
+      "displayName": "WatchVideo",
+      "name": "watchvideo",
+      "libPath": "src/lib/actions/sendWatchVideoEvent.js",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "description": "Track people who watch videos",
+        "type": "object",
+        "properties": {
+          "currency": {
+            "type": "string"
+          },
+          "lead_type": {
+            "type": "string"
+          },
+          "order_id": {
+            "type": "string"
+          },
+          "order_quantity": {
+            "type": "string"
+          },
+          "promo_code": {
+            "type": "string"
+          },
+          "property": {
+            "type": "string"
+          },
+          "search_query": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "video_title": {
+            "type": "string"
+          },
+          "line_items": {
+            "type": "string"
+          }
+        }
+      },
+      "viewPath": "actions/watchvideo.html"
+    },
+    {
+      "displayName": "Signup",
+      "name": "signup",
+      "libPath": "src/lib/actions/sendSignUpEvent.js",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "description": "Track people who signup for your product or service",
+        "type": "object",
+        "properties": {
+          "currency": {
+            "type": "string"
+          },
+          "lead_type": {
+            "type": "string"
+          },
+          "order_id": {
+            "type": "string"
+          },
+          "order_quantity": {
+            "type": "string"
+          },
+          "promo_code": {
+            "type": "string"
+          },
+          "property": {
+            "type": "string"
+          },
+          "search_query": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "video_title": {
+            "type": "string"
+          },
+          "line_items": {
+            "type": "string"
+          }
+        }
+      },
+      "viewPath": "actions/signup.html"
+    },
+    {
+      "displayName": "Lead",
+      "name": "lead",
+      "libPath": "src/lib/actions/sendLeadEvent.js",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "description": "Track people who show interest in your product or service",
+        "type": "object",
+        "properties": {
+          "currency": {
+            "type": "string"
+          },
+          "lead_type": {
+            "type": "string"
+          },
+          "order_id": {
+            "type": "string"
+          },
+          "order_quantity": {
+            "type": "string"
+          },
+          "promo_code": {
+            "type": "string"
+          },
+          "property": {
+            "type": "string"
+          },
+          "search_query": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "video_title": {
+            "type": "string"
+          },
+          "line_items": {
+            "type": "string"
+          }
+        }
+      },
+      "viewPath": "actions/lead.html"
+    },
+    {
+      "displayName": "Custom",
+      "name": "custom",
+      "libPath": "src/lib/actions/sendCustomEvent.js",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "description": "Track a custom event to include in conversion reporting",
+        "type": "object",
+        "properties": {
+          "currency": {
+            "type": "string"
+          },
+          "lead_type": {
+            "type": "string"
+          },
+          "order_id": {
+            "type": "string"
+          },
+          "order_quantity": {
+            "type": "string"
+          },
+          "promo_code": {
+            "type": "string"
+          },
+          "property": {
+            "type": "string"
+          },
+          "search_query": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "video_title": {
+            "type": "string"
+          },
+          "line_items": {
+            "type": "string"
+          }
+        }
+      },
+      "viewPath": "actions/custom.html"
+    }
+  ]
+}

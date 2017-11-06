@@ -1,0 +1,26 @@
+{
+  "name": "extension-pinterest",
+  "version": "1.0.0",
+  "description": "Track visitor actions on your website after views of your Promoted Pin. Measure return on ad spend and create targeted audiences. Learn more at https://ads.pinterest.com/",
+  "author": {
+    "name": "Jeff Chasin",
+    "url": "http://developer.adobelaunch.com/"
+  },
+  "scripts": {
+    "scaffold": "reactor-scaffold",
+    "sandbox": "reactor-sandbox",
+    "package": "reactor-packager"
+  },
+  "keywords": [
+    "turbine",
+    "extension",
+    "pinterest"
+  ],
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@adobe/reactor-packager": "^2.6.0",
+    "@adobe/reactor-sandbox": "^8.2.0",
+    "@adobe/reactor-scaffold": "^1.1.9",
+    "@adobe/reactor-turbine": "^23.0.0"
+  }
+}
