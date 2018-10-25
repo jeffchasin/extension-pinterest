@@ -1,11 +1,12 @@
 {
-  "displayName": "Pinterest Conversion Tracking",
   "name": "pinterest-conversion-tracking",
-  "version": "1.0.0",
+  "platform": "web",
+  "version": "1.0.1",
+  "displayName": "Pinterest Conversion Tracking",
   "description": "Track visitor actions on your website after views of your Promoted Pin. Measure return on ad spend and create targeted audiences. Learn more at https://ads.pinterest.com/",
   "iconPath": "src/view/resources/pinterest.svg",
   "author": {
-    "name": "Jeff Chasin",
+    "name": "Echo Web Development",
     "url": "http://developer.adobelaunch.com/"
   },
   "viewBasePath": "src/view/",

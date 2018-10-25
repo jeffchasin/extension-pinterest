@@ -1,6 +1,6 @@
 {
   "name": "extension-pinterest",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Track visitor actions on your website after views of your Promoted Pin. Measure return on ad spend and create targeted audiences. Learn more at https://ads.pinterest.com/",
   "author": {
     "name": "Jeff Chasin",
@@ -17,10 +17,14 @@
     "pinterest"
   ],
   "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeffchasin/extension-pinterest.git"
+  },
   "devDependencies": {
-    "@adobe/reactor-packager": "^2.6.0",
-    "@adobe/reactor-sandbox": "^8.2.0",
-    "@adobe/reactor-scaffold": "^1.1.9",
-    "@adobe/reactor-turbine": "^23.0.0"
+    "@adobe/reactor-packager": "^3.0.2",
+    "@adobe/reactor-sandbox": "^10.0.6",
+    "@adobe/reactor-scaffold": "^2.1.0",
+    "@adobe/reactor-turbine": "^25.1.3"
   }
 }
