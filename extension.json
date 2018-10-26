@@ -9,6 +9,7 @@
     "name": "Echo Web Development",
     "url": "http://developer.adobelaunch.com/"
   },
+  "exchangeUrl": "https://www.adobeexchange.com/experiencecloud.details.100523.html",
   "viewBasePath": "src/view/",
   "configuration": {
     "viewPath": "configuration/configuration.html",
@@ -301,7 +302,7 @@
     {
       "displayName": "Signup",
       "name": "signup",
-      "libPath": "src/lib/actions/sendSignUpEvent.js",
+      "libPath": "src/lib/actions/sendSignupEvent.js",
       "schema": {
         "$schema": "http://json-schema.org/draft-04/schema#",
         "description": "Track people who signup for your product or service",
