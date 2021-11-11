@@ -9,7 +9,7 @@
     "name": "Echo Web Development",
     "url": "http://developer.adobelaunch.com/"
   },
-  "exchangeUrl": "https://www.adobeexchange.com/experiencecloud.details.100523.html",
+  "exchangeUrl": "https://exchange.adobe.com/experiencecloud.details.100523.html",
   "viewBasePath": "src/view/",
   "configuration": {
     "viewPath": "configuration/configuration.html",

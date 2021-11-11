@@ -1,0 +1,14 @@
+{
+  "name": "extension-pinterest",
+  "version": "1.0.3",
+  "description": "Provides actions to send Pinterest conversion tracking events",
+  "scripts": {
+    "sandbox": "npx @adobe/reactor-sandbox"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jeffchasin/extension-pinterest.git"
+  },
+  "license": "Apache-2.0",
+  "author": "Echo Web Development"
+}
