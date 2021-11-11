@@ -1,6 +1,6 @@
 {
   "name": "extension-pinterest",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Provides actions to send Pinterest conversion tracking events",
   "scripts": {
     "sandbox": "npx @adobe/reactor-sandbox"
