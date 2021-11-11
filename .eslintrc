@@ -1,7 +1,6 @@
 {
   "env": {
     "browser": true,
-    "jasmine": true,
     "node": true
   },
   "rules": {
@@ -22,9 +21,5 @@
     "one-var": [2, "never"],
     "brace-style": [2, "1tbs", { "allowSingleLine": true }],
     "consistent-this": [0, "self"]
-  },
-  "globals": {
-    "Simulate": true,
-    "_satellite": true
   }
 }

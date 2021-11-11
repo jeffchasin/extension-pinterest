@@ -1,7 +1,7 @@
 {
   "name": "pinterest-conversion-tracking",
   "platform": "web",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "displayName": "Pinterest Conversion Tracking",
   "description": "Track visitor actions on your website after views of your Promoted Pin. Measure return on ad spend and create targeted audiences. Learn more at https://ads.pinterest.com/",
   "iconPath": "src/view/resources/pinterest.svg",
@@ -9,7 +9,7 @@
     "name": "Echo Web Development",
     "url": "http://developer.adobelaunch.com/"
   },
-  "exchangeUrl": "https://www.adobeexchange.com/experiencecloud.details.100523.html",
+  "exchangeUrl": "https://exchange.adobe.com/experiencecloud.details.100523.html",
   "viewBasePath": "src/view/",
   "configuration": {
     "viewPath": "configuration/configuration.html",

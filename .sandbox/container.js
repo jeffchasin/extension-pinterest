@@ -1,28 +1,4 @@
 module.exports = {
-  "dataElements": {},
-  "rules": [{
-    "id": "RL1540493165782",
-    "name": "Top",
-    "events": [{
-      "modulePath": "sandbox/pageTop.js",
-      "settings": {}
-    }],
-    "actions": [{
-      "modulePath": "pinterest-conversion-tracking/src/lib/actions/sendPageVisitEvent.js",
-      "settings": {
-        "order_id": "",
-        "currency": "",
-        "value": "",
-        "search_query": "",
-        "video_title": "",
-        "property": "",
-        "line_items": "",
-        "order_quantity": "",
-        "lead_type": "",
-        "promo_code": ""
-      }
-    }]
-  }],
   "extensions": {
     "pinterest-conversion-tracking": {
       "displayName": "Pinterest Conversion Tracking",
@@ -31,13 +7,79 @@ module.exports = {
       }
     }
   },
+  "dataElements": {
+    "CurrencyCode": {
+      "settings": {
+        "name": "CurrencyCode"
+      },
+      "cleanText": true,
+      "forceLowerCase": false,
+      "modulePath": "sandbox/localStorage.js",
+      "storageDuration": ""
+    },
+    "Purchase ID (Date + PNR)": {
+      "settings": {
+        "name": "PurchaseID"
+      },
+      "cleanText": false,
+      "forceLowerCase": false,
+      "modulePath": "sandbox/localStorage.js",
+      "storageDuration": ""
+    },
+    "FlightSearch: NumberOfpass": {
+      "settings": {
+        "name": "FlightSearch"
+      },
+      "cleanText": true,
+      "forceLowerCase": false,
+      "modulePath": "sandbox/localStorage.js",
+      "storageDuration": ""
+    }
+  },
+  "rules": [{
+    "id": "RL1636588223040",
+    "name": "Load Base Code",
+    "events": [{
+      "modulePath": "sandbox/pageTop.js",
+      "settings": {}
+    }],
+    "actions": [{
+      "modulePath": "pinterest-conversion-tracking/src/lib/actions/loadBaseCode.js",
+      "settings": {}
+    }, {
+      "modulePath": "sandbox/logEventInfo.js",
+      "settings": {}
+    }]
+  }, {
+    "id": "RL1636588276477",
+    "name": "Send viewCategory event",
+    "events": [{
+      "modulePath": "sandbox/click.js",
+      "settings": {}
+    }],
+    "actions": [{
+      "modulePath": "pinterest-conversion-tracking/src/lib/actions/sendViewCategoryEvent.js",
+      "settings": {
+        "currency": "%CurrencyCode%",
+        "promo_code": "PROMOCODE"
+      }
+    }]
+  }],
   "property": {
-    "settings": {}
+    "name": "Sandbox property",
+    "settings": {
+      "id": "PR12345",
+      "domains": ["adobe.com", "example.com"],
+      "undefinedVarsReturnEmpty": false
+    }
+  },
+  "company": {
+    "orgId": "ABCDEFGHIJKLMNOPQRSTUVWX@AdobeOrg"
   },
   "buildInfo": {
-    "turbineVersion": "25.1.3",
-    "turbineBuildDate": "2018-10-25T18:46:16.288Z",
-    "buildDate": "2018-10-25T18:46:16.288Z",
+    "turbineVersion": "27.2.0",
+    "turbineBuildDate": "2021-11-11T20:43:30.228Z",
+    "buildDate": "2021-11-11T20:43:30.228Z",
     "environment": "development"
   }
 }

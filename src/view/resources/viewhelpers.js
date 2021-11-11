@@ -31,7 +31,8 @@ function deStuff() {
 
   divNodes.forEach(function(el) {
     el.addEventListener('click', function(e) {
-      window.extensionBridge.openDataElementSelector(function(dataElement) {
+
+      window.extensionBridge.openDataElementSelector().then(function(dataElement) {
         var deName = e.target.parentElement.dataset.de;
         var theInp = document.getElementById(deName);
         theInp.value += dataElement;

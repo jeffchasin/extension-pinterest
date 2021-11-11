@@ -1,9 +1,13 @@
 'use strict';
 
-module.exports = function(settings) {
-  var pintrk = require('../helpers/getPintrkBase');
-
-  pintrk('track', 'viewcategory', settings);
-  turbine.logger.log('Send event: pintrk("track", "viewcategory" '
-   + JSON.stringify(settings) + ')');
+// For details on Pinterest events:
+// https://help.pinterest.com/en/business/article/add-event-codes
+module.exports = function (settings) {
+  pintrk('track', 'viewcategory', settings, function (didInit, error) {
+    if (!didInit) {
+      turbine.logger.log('pintrk viewcategory event error: ' + error);
+    } else {
+      turbine.logger.log('Sent viewcategory event: ' + JSON.stringify(settings));
+    }
+  });
 };

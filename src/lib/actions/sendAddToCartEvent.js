@@ -1,8 +1,13 @@
 'use strict';
 
-module.exports = function(settings) {
-  var pintrk = require('../helpers/getPintrkBase');
-
-  pintrk('track', 'addtocart', settings);
-  turbine.logger.log('Send event: pintrk("track", "addtocart" ' + JSON.stringify(settings) + ')');
+// For details on Pinterest events:
+// https://help.pinterest.com/en/business/article/add-event-codes
+module.exports = function (settings) {
+  pintrk('track', 'addtocart', settings, function (didInit, error) {
+    if (!didInit) {
+      turbine.logger.log('pintrk addtocart error: ' + error);
+    } else {
+      turbine.logger.log('Sent addtocart event: ' + JSON.stringify(settings));
+    }
+  });
 };

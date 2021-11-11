@@ -1,30 +1,14 @@
 {
   "name": "extension-pinterest",
-  "version": "1.0.2",
-  "description": "Track visitor actions on your website after views of your Promoted Pin. Measure return on ad spend and create targeted audiences. Learn more at https://ads.pinterest.com/",
-  "author": {
-    "name": "Jeff Chasin",
-    "url": "http://developer.adobelaunch.com/"
-  },
+  "version": "1.0.3",
+  "description": "Provides actions to send Pinterest conversion tracking events",
   "scripts": {
-    "scaffold": "reactor-scaffold",
-    "sandbox": "reactor-sandbox",
-    "package": "reactor-packager"
+    "sandbox": "npx @adobe/reactor-sandbox"
   },
-  "keywords": [
-    "turbine",
-    "extension",
-    "pinterest"
-  ],
-  "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jeffchasin/extension-pinterest.git"
+    "url": "git@github.com:jeffchasin/extension-pinterest.git"
   },
-  "devDependencies": {
-    "@adobe/reactor-packager": "^3.0.2",
-    "@adobe/reactor-sandbox": "^10.0.6",
-    "@adobe/reactor-scaffold": "^2.1.0",
-    "@adobe/reactor-turbine": "^25.1.3"
-  }
+  "license": "Apache-2.0",
+  "author": "Echo Web Development"
 }

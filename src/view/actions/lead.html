@@ -8,8 +8,8 @@
   <meta name="description" content="Lead Action">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
-    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+    integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   <link rel="stylesheet" href="../resources/main.css">
   <script src="../resources/viewhelpers.js"></script>
 </head>
@@ -28,34 +28,30 @@
     window.extensionBridge.register({
       init: function (info) {
         if (info.settings) {
-          // Populate form values from persisted settings.
-          document.getElementById('currency').value = info.settings.currency || '';
-          document.getElementById('lead_type').value = info.settings.lead_type || '';
-          document.getElementById('line_items').value = info.settings.line_items || '';
-          document.getElementById('order_id').value = info.settings.order_id || '';
-          document.getElementById('order_quantity').value = info.settings.order_quantity || '';
-          document.getElementById('promo_code').value = info.settings.promo_code || '';
-          document.getElementById('property').value = info.settings.property || '';
-          document.getElementById('search_query').value = info.settings.search_query || '';
-          document.getElementById('value').value = info.settings.value || '';
-          document.getElementById('video_title').value = info.settings.video_title || '';
+          var viewSettings = ['currency', 'lead_type', 'line_items', 'order_id', 'order_quantity', 'promo_code', 'property', 'search_query', 'value', 'video_title'];
+
+          viewSettings.forEach(function (el) {
+            var val = info['settings'][el];
+            if (val !== null && val !== '') {
+              // Populate form values from persisted settings
+              document.getElementById(el).value = val || '';
+            }
+          });
         }
       },
 
       getSettings: function () {
-        // Return settings object from form values.
-        return {
-          currency: document.getElementById('currency').value || '',
-          lead_type: document.getElementById('lead_type').value || '',
-          line_items: document.getElementById('line_items').value || '',
-          order_id: document.getElementById('order_id').value || '',
-          order_quantity: document.getElementById('order_quantity').value || '',
-          promo_code: document.getElementById('promo_code').value || '',
-          property: document.getElementById('property').value || '',
-          search_query: document.getElementById('search_query').value || '',
-          value: document.getElementById('value').value || '',
-          video_title: document.getElementById('video_title').value || '',
-        };
+        var viewFields = ['currency', 'lead_type', 'line_items', 'order_id', 'order_quantity', 'promo_code', 'property', 'search_query', 'value', 'video_title'];
+        var populatedFields = {};
+
+        viewFields.forEach(function (el) {
+          var val = document.getElementById(el).value
+          if (val !== null && val !== '') {
+            populatedFields[el] = val;
+          }
+        });
+        // Return settings object to persist entered values
+        return populatedFields;
       },
 
       validate: function () {

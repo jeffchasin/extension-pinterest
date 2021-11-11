@@ -10,20 +10,34 @@
 
 <body>
   <div class="container">
-    <h3>Pinterest Tag</h3>
-    <p>Use the Pinterest tag on your website to build audiences to target based on actions they've taken on your site, and gather
-      valuable conversion insights.</p>
-    <p>Learn more about
+    <h3>Pinterest Conversion Tracking</h3>
+    <p>Use the Pinterest tag on your website to build audiences based on actions they take, and gather valuable insights. Learn more about
       <a href="https://help.pinterest.com/en/articles/website-conversion-tracking" target="_blank">the Pinterest Tag for businesses and websites</a>.</p>
 
-      <p>If you know your Tag ID, enter it here:</p>
+      <div class="card">
+        <div class="card-header">
+          <b>Note</b>
+        </div>
+        <div class="card-body">
+          <p class="card-text">The Pinterest base code (the Pinterest tag) is required on pages where you will track events. This extension provides that base code.</p>
+          <p class="card-text">You can add a Pinterest <i>Load Base Code</i> action to any global rule that uses a Page Top event type to ensure the base code will be available for Pinterest event actions.</p>
+          <p class="card-text">To find your Pinterest Tag ID, sign in to your <a href="https://ads.pinterest.com/">Pinterest Ads account,</a> click on Ads, then Conversions.</p>
+        </div>
+      </div>
 
-    <form>
-      <label>
-        <span>Tag ID</span>
-        <input id="tagid">
-      </label>
-    </form>
+      <div class="card mt-3">
+        <div class="card-header">
+          <b>Enter your Pinterest Tag ID</b>
+        </div>
+        <div class="card-body">
+          <form>
+            <label>
+              <span>Tag ID </span>
+              <input id="tagid">
+            </label>
+          </form>
+        </div>
+      </div>
 
     <script src="https://assets.adobedtm.com/activation/reactor/extensionbridge/extensionbridge.min.js"></script>
     <script>
